@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+$clr-background: hsl(210, 46%, 95%);
+$clr-primary: hsl(217, 19%, 35%);
+$clr-secondary: hsl(212, 23%, 69%);
+$clr-active: hsl(214, 17%, 51%);
+html {
+  font-family: 'Manrope', sans-serif;
+  font-size: 62.5%;
+  font-weight: 500;
+}
+body {
+  background-color: $clr-background;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+.article-preview {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 33rem;
+  overflow: hidden;
+  &__image {
+    & img {
+      max-height: 20rem;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 3.5rem;
+  }
+  &__title {
+    color: $clr-primary;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-top: 2rem;
+  }
+  &__desc {
+    color: $clr-secondary;
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+  &__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__author {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    & img {
+      border-radius: 50%;
+      height: 4rem;
+      width: 4rem;
+    }
+    &-info {
+      margin-left: 1.5rem;
+      & .author-name {
+        color: $clr-primary;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      & .publish-date {
+        color: $clr-secondary;
+      }
+    }
+  }
+  &__button {
+    background-color: $clr-background;
+    border: none;
+    border-radius: 50%;
+    color: $clr-primary;
+    cursor: pointer;
+    font-size: 2rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    transition: all 0.25s ease;
+    width: 3.5rem;
+    &:hover {
+      background-color: $clr-active;
+      color: $clr-background;
+    }
+  }
+  &__share {
+    position: relative;
+    &-options {
+      align-items: center;
+      background-color: $clr-primary;
+      border-radius: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      padding: 2rem 3rem;
+      // position: absolute;
+      & span {
+        color: $clr-secondary;
+        letter-spacing: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

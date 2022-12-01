@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 62.5%;
+  font-weight: 500;
+}
+
+body {
+  background-color: hsl(210deg, 46%, 95%);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.article-preview {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 33rem;
+  overflow: hidden;
+}
+.article-preview__image img {
+  max-height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.article-preview__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 3.5rem;
+}
+.article-preview__title {
+  color: hsl(217deg, 19%, 35%);
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-top: 2rem;
+}
+.article-preview__desc {
+  color: hsl(212deg, 23%, 69%);
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.article-preview__footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.article-preview__author {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.article-preview__author img {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+}
+.article-preview__author-info {
+  margin-left: 1.5rem;
+}
+.article-preview__author-info .author-name {
+  color: hsl(217deg, 19%, 35%);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.article-preview__author-info .publish-date {
+  color: hsl(212deg, 23%, 69%);
+}
+.article-preview__button {
+  background-color: hsl(210deg, 46%, 95%);
+  border: none;
+  border-radius: 50%;
+  color: hsl(217deg, 19%, 35%);
+  cursor: pointer;
+  font-size: 2rem;
+  height: 3.5rem;
+  padding: 0.5rem;
+  transition: all 0.25s ease;
+  width: 3.5rem;
+}
+.article-preview__button:hover {
+  background-color: hsl(214deg, 17%, 51%);
+  color: hsl(210deg, 46%, 95%);
+}
+.article-preview__share {
+  position: relative;
+}
+.article-preview__share-options {
+  align-items: center;
+  background-color: hsl(217deg, 19%, 35%);
+  border-radius: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 3rem;
+}
+.article-preview__share-options span {
+  color: hsl(212deg, 23%, 69%);
+  letter-spacing: 0.5rem;
+  margin-right: 0.5rem;
+}/*# sourceMappingURL=style.css.map */
