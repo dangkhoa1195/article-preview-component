@@ -3,6 +3,12 @@ $clr-background: hsl(210, 46%, 95%);
 $clr-primary: hsl(217, 19%, 35%);
 $clr-secondary: hsl(212, 23%, 69%);
 $clr-active: hsl(214, 17%, 51%);
+
+@mixin min-width {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
 html {
   font-family: 'Manrope', sans-serif;
   font-size: 62.5%;
@@ -21,17 +27,25 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 33rem;
-  overflow: hidden;
+  @include min-width() {
+    flex-direction: row;
+    max-width: 73rem;
+  }
   &__image {
+    flex: 1;
     & img {
-      max-height: 20rem;
+      border-radius: 1.5rem 1.5rem 0 0;
+      height: 100%;
       object-fit: cover;
-      width: 100%;
+      @include min-width() {
+        border-radius: 1.5rem 0 0 1.5rem;
+      }
     }
   }
   &__content {
     display: flex;
     flex-direction: column;
+    flex: 1.5;
     gap: 2rem;
     padding: 2rem 3.5rem;
   }
@@ -40,11 +54,19 @@ body {
     font-size: 1.8rem;
     font-weight: 700;
     padding-top: 2rem;
+    @include min-width() {
+      font-size: 2rem;
+      padding-right: 2rem;
+    }
   }
   &__desc {
     color: $clr-secondary;
     font-size: 1.3rem;
     line-height: 1.5;
+    @include min-width() {
+      font-size: 1.4rem;
+      padding-right: 2rem;
+    }
   }
   &__footer {
     align-items: center;
@@ -69,9 +91,15 @@ body {
         font-size: 1.1rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
+        @include min-width() {
+          font-size: 1.4rem;
+        }
       }
       & .publish-date {
         color: $clr-secondary;
+        @include min-width() {
+          font-size: 1.3rem;
+        }
       }
     }
   }
@@ -91,12 +119,16 @@ body {
       background-color: $clr-active;
       color: $clr-background;
     }
+    @include min-width() {
+      margin-right: 1.5rem;
+    }
   }
   &__share {
     z-index: 1;
     &-options {
       align-items: center;
       background-color: $clr-primary;
+      border-radius: 0 0 1.5rem 1.5rem;
       bottom: -2rem;
       display: flex;
       gap: 1.5rem;
@@ -104,14 +136,34 @@ body {
       padding: 2rem 3rem;
       position: absolute;
       top: -2rem;
-      transform: translate(0, 100%) scale(0);
-      transition: all 0.5s ease;
+      transform: translateY(50%) scale(0);
+      transition: all 0.25s ease;
       visibility: hidden;
       width: calc(100% + 7rem);
       z-index: -1;
+      @include min-width() {
+        border-radius: 1.5rem;
+        bottom: 0;
+        left: 23.5rem;
+        top: -3rem;
+        width: 25rem;
+        &::after {
+          background-color: $clr-primary;
+          content: '';
+          height: 1.5rem;
+          left: 50%;
+          position: absolute;
+          top: 100%;
+          transform: translate(-50%, -60%) rotate(45deg);
+          width: 2rem;
+        }
+      }
       &.active {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         visibility: visible;
+        @include min-width() {
+          transform: translateY(-100%) scale(1);
+        }
       }
       & span {
         color: $clr-secondary;
